@@ -1,0 +1,537 @@
+<mvc:View
+    xmlns:form="sap.ui.layout.form"
+    controllerName="com.app.adhocwt.controller.ReceivingOfHuByDoor"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:ndc="sap.ndc"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+>
+    <tnt:ToolPage id="idToolPageRecHuByDoor">
+        <tnt:header>
+            <tnt:ToolHeader id="idtntToolHeaderRecHuByDoor">
+          
+                <Button
+                    id="idRecHuByDoorfirstbackbtn"
+                    icon="sap-icon://nav-back"
+                    press="onRecHuByDoorWhseDoorfirstBackBtnPress"
+                    visible="false"
+                />
+                <Button
+                    id="idRecHuByDoorSecondbackbtn"
+                    icon="sap-icon://nav-back"
+                    press="onRecHuByDoorWhseDoorSecondBackBtnPress"
+                    visible="false"
+                />
+
+                <Button
+                    id="idRecHuByDoorThirdbackbtn"
+                    icon="sap-icon://nav-back"
+                    press="onRecHuByDoorWhseDoorThirdBackBtnPress"
+                    visible="false"
+                />
+                <Button
+                    id="idRecHuByDoorfourthbackbtn"
+                    icon="sap-icon://nav-back"
+                    press="onRecHuByDoorWhseDoorfourthBackBtnPress"
+                    visible="false"
+                />
+                 <Button
+                    id="idRecHuByDoorFifthbackbtn"
+                    icon="sap-icon://nav-back"
+                    press="onRecHuByDoorWhseDoorFifthBackBtnPress"
+                    visible="false"
+                />
+                <Button
+                    id="idRecHuByDoorSixthbackbtn"
+                    icon="sap-icon://nav-back"
+                    press="onRecHuByDoorWhseDoorSixthBackBtnPress"
+                    visible="false"
+                />
+                <Image
+                    id="_IDGenImage1RecHuByDoor"
+                    height="1.5rem"
+                    class="sapUiSmallMarginBegin"
+                    src="https://artihcus.com/assets/img/AG-logo.png"
+                />
+                <tnt:ToolHeaderUtilitySeparator
+                    id="idToolHeaderUtilitySeparatorRecHuByDoor"
+                />
+                <ToolbarSpacer id="idToolbarSpacerRecHuByDoor">
+                    <layoutData>
+                        <OverflowToolbarLayoutData
+                            id="idOverflowToolbarLayoutData1RecHuByDoor"
+                            priority="NeverOverflow"
+                            minWidth="20px"
+                        />
+                    </layoutData>
+                </ToolbarSpacer>
+                <Avatar
+                    id="_IDGenAvatar1RecHuByDoor"
+                    displaySize="XS"
+                    press="onAvatarPressed"
+                    tooltip="Profile"
+                />
+            </tnt:ToolHeader>
+        </tnt:header>
+        <tnt:mainContents>
+            <ScrollContainer
+                id="idRecHuByDoorFirstScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                class="sapUiContentPadding"
+            >
+             <form:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    emptySpanL="1"
+                    emptySpanM="1"
+                    columnsL="2"
+                    columnsM="1"
+                    columnsS="1"
+                >
+                <VBox >
+                <HBox
+                    id="idRecHuByDoorInitialHuPage1"
+                    class="sapUiMediumMargin"
+                >
+                    <Label
+                        id="idRecHuByDoorWhseDoorLabel"
+                        text="Warehouse Door"
+                        
+                    />
+                    <Input
+                        id="idRecHuByDoorWhseDoorInput"
+                        value=""
+                        liveChange="onRecHuByDoorLiveChange"
+                    />
+                    <Button
+                        id="idRecHuByDoorWhseDoorScannerBtn"
+                        icon="sap-icon://bar-code"
+                        press="onWhseDoorBarcodeScanner"
+                    />
+                </HBox>
+                </VBox>
+                </form:SimpleForm>
+            </ScrollContainer>
+            <ScrollContainer
+                id="idRecHuByDoorSecondScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                class="sapUiContentPadding"
+            >
+           <form:SimpleForm
+                            id="idSfDeliveryDetails"
+                            layout="ResponsiveGridLayout"
+                            editable="true"
+                            columnsL="2"
+                            columnsM="1"
+                        >
+                            <!-- Delivery Number Field -->
+ 
+                            <Label
+                                id="idDeliveryNumber"
+                                text="Delivery"
+                                class="sapUiTinyMarginEnd"
+                            />
+ 
+                            <Input
+                                id="idDeliveryInput"
+                                placeholder="Delivery number.."
+                                maxLength="25"
+                                width="200px"
+                            />
+                            <Label
+                                id="idROHDItemNumber"
+                                text="Item"
+                                class="sapUiTinyMarginEnd"
+                            />
+ 
+                            <Input
+                                id="idInputItemsofDelivery"
+                                placeholder="Enter Items.."
+                                maxLength="25"
+                                width="200px"
+                            />
+ 
+                            <!-- Vendor Field -->
+                            <Label
+                                id="idVendorofDelivery"
+                                text="Vendor"
+                            />
+                            <Input
+                                id="inputVendorofDelivery"
+                                placeholder="Enter Vendor..."
+                                maxLength="25"
+                                width="200px"
+                            />
+ 
+                            <!-- No.of HU -->
+                            <Label
+                                id="idforNOofHU"
+                                text="No.of HU"
+                                class="sapUiMarginTopmargin"
+                            />
+                            <Input
+                                id="idInputforNOofHU"
+                                placeholder="Enter no.of HU"
+                                maxLength="25"
+                                width="200px"
+                            />
+ 
+                            <!-- HU field -->
+                            <Label
+                                id="idHUlabelD"
+                                text="HU"
+                                class="margin"
+                            />
+                            <VBox>
+                                <Input
+                                    id="idInputHUd"
+                                    placeholder="Enter HU"
+                                    maxLength="25"
+                                    width="200px"
+                                />
+                                <!-- HU List , New Hu ,GR,  -->
+                                <HBox>
+                                    <Button
+                                        id="idButtonHulist"
+                                        text="HU List"
+                                        press="onHUListPress"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                    <Button
+                                        id="idButtonNewHUDelivery"
+                                        text="New HU"
+                                        press="onNewHUPress"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                    <Button
+                                        id="idButtonGRDelivery"
+                                        text="GR"
+                                        press="onGRPress"
+                                    />
+                                </HBox>
+                                <!-- HU Change ,Unload ,Create WT, Confirm WT -->
+                                <HBox>
+                                    <Button
+                                        id="idButtonHuChange"
+                                        text="HU Change"
+                                        press="onHUChangePress"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                    <Button
+                                        id="idButtonUnloadDelivery"
+                                        text="Unload"
+                                        press="onUnloadDeliveryPress"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                    <Button
+                                        id="idButtonCreateWT"
+                                        text="Create WT"
+                                        press="onPressCreateWT"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                    <Button
+                                        id="idButtonConfirmWT"
+                                        text="Confirm WT"
+                                        press="onPressConfirmWT"
+                                        class="sapUiTinyMarginEnd"
+                                    />
+                                </HBox>
+                            </VBox>
+                        </form:SimpleForm>
+            </ScrollContainer>
+            <ScrollContainer
+                id="idRecHuByDoorThirdScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                visible="false"
+                class="sapUiContentPadding"
+            >
+                <Table
+                    id="idHuByDoorTable"
+                    items="{
+            path: '/ProductCollection',
+            sorter: {
+                path: 'Name'
+            }
+        }"
+                >
+                    <columns>
+                        <Column width="12em">
+                            <Text text="S No" />
+                        </Column>
+                        <Column>
+                            <Text text="Hu No" />
+                        </Column>
+                        <Column>
+                            <Text text="Product" />
+                        </Column>
+                        <Column>
+                            <Text text="Product Description" />
+                        </Column>
+                        <Column>
+                            <Text text="Qty" />
+                        </Column>
+                        <Column>
+                            <Text text="Uom" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells />
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+            <ScrollContainer
+                id="idRecHuByDoorFourthScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                class="sapUiContentPadding"
+                visible="false"
+            >
+             <form:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    emptySpanL="1"
+                    emptySpanM="1"
+                    columnsL="2"
+                    columnsM="1"
+                    columnsS="1"
+                >
+                <VBox >
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="Product"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                    <HBox width="20px" />
+                </HBox>
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="Qty"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                    <HBox width="20px" />
+                    <HBox>
+                        <Label
+                            class="sapUiTinyMargin"
+                            
+                            text="Uom"
+                        />
+                        <Input class="sapUiTinyMargin" />
+                    </HBox>
+                </HBox>
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="Packing Material"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                </HBox>
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="Batch"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                </HBox>
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="BBD"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                </HBox>
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="Man"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                    <HBox width="20px" />
+                    <HBox>
+                        <Label
+                            class="sapUiTinyMargin"
+                            
+                            text="Expiry"
+                        />
+                        <Input class="sapUiTinyMargin" />
+                    </HBox>
+                </HBox>
+                <HBox>
+                    <Label
+                        class="sapUiTinyMargin"
+                        
+                        text="Coo"
+                    />
+                    <Input class="sapUiTinyMargin" />
+                </HBox>
+ 
+                <!-- Button aligned to bottom-right -->
+                <HBox
+                    justifyContent="Center"
+                    class="sapUiNoMargin"
+                >
+                    <Button
+                        text="Next (or) Enter"
+                        press="onNextOrEnterPress"
+                    />
+                </HBox>
+                </VBox>
+                 </form:SimpleForm>
+            </ScrollContainer>
+             <ScrollContainer
+                id="idRecHuByDoorFifthScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                class="sapUiContentPadding"
+                visible="false"
+            >
+             <form:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    emptySpanL="1"
+                    emptySpanM="1"
+                    columnsL="2"
+                    columnsM="1"
+                    columnsS="1"
+                >
+                <VBox >
+
+            <HBox>
+        <Label   class="sapUiTinyMargin"  text="Hu"></Label>
+        <Input class="sapUiTinyMargin"></Input>
+        <HBox width="20px"></HBox>
+       
+    </HBox>
+     <HBox  >
+        <Label  class="sapUiTinyMargin"  text="Delivery"></Label>
+        <VBox>
+        <Input class="sapUiTinyMargin"></Input>
+        <HBox    class="sapUiNoMargin">
+ 
+        <Button text="Goods Receipt" press="onGrPress"></Button>
+         </HBox>
+         </VBox>
+         <HBox width="20px"></HBox>
+         <HBox >
+         
+         <Label  class="sapUiTinyMargin"  text="Item no"></Label>
+         <VBox >
+        <Input class="sapUiTinyMargin"></Input>
+         <HBox    class="sapUiNoMargin">
+       
+        <Button text="Unload" press="onUnloadPress"></Button>
+    </HBox>
+ 
+        </VBox>
+         </HBox>
+        </HBox>
+         </VBox>
+                 </form:SimpleForm>
+            </ScrollContainer>
+            <ScrollContainer
+                id="idRecHuByDoorSixthScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                class="sapUiContentPadding"
+                visible="false"
+            >
+             <form:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    emptySpanL="1"
+                    emptySpanM="1"
+                    columnsL="2"
+                    columnsM="1"
+                    columnsS="1"
+                >
+                <VBox >
+
+            <HBox>
+        <Label   class="sapUiTinyMargin"  text="Product"></Label>
+        <Input class="sapUiTinyMargin"></Input>
+        <HBox width="20px"></HBox>
+       
+    </HBox>
+     <HBox  >
+        <Label  class="sapUiTinyMargin"  text="Quantity"></Label>
+        <VBox>
+        <Input class="sapUiTinyMargin"></Input>
+        <HBox    class="sapUiNoMargin">
+ 
+        <Button text="Goods Receipt" ></Button>
+         </HBox>
+         </VBox>
+        </HBox>
+         </VBox>
+                 </form:SimpleForm>
+            </ScrollContainer>
+             <ScrollContainer
+                id="idRecHuByDoorSeventhScrollContainer"
+                horizontal="false"
+                vertical="true"
+                height="100%"
+                class="sapUiContentPadding"
+                visible="false"
+            >
+             <form:SimpleForm
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    emptySpanL="1"
+                    emptySpanM="1"
+                    columnsL="2"
+                    columnsM="1"
+                    columnsS="1"
+                >
+                <VBox >
+
+           <HBox>
+        <Label   class="sapUiTinyMargin"  text="Product"></Label>
+        <Input class="sapUiTinyMargin"></Input>
+        <HBox width="20px"></HBox>
+       
+    </HBox>
+     <HBox  >
+        <Label  class="sapUiTinyMargin"  text="Quantity"></Label>
+        <VBox>
+        <Input class="sapUiTinyMargin"></Input>
+        <HBox    class="sapUiNoMargin">
+ 
+        <Button text="Unload" ></Button>
+         </HBox>
+         </VBox>
+        </HBox>
+         </VBox>
+                 </form:SimpleForm>
+            </ScrollContainer>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>
+ 
+ 
